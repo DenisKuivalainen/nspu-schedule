@@ -1,6 +1,9 @@
+import getSchedule from '../src/schedule'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+export default function Home(props) {
+  console.log(props.timetable)
+
   return (
     <div className={styles.container}>
       <main className={styles.main}>
@@ -57,3 +60,5 @@ export default function Home() {
     </div>
   )
 }
+
+export const getServerSideProps = getSchedule;

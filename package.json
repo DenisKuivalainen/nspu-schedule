@@ -7,8 +7,10 @@
     "start": "next start"
   },
   "dependencies": {
+    "http": "^0.0.1-security",
     "next": "latest",
     "next-pwa": "^3.1.0",
+    "node-html-parser": "^3.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
