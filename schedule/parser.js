@@ -1,26 +1,25 @@
-const getSchedule = async(context) => {
-    var url = undefined, status = 0, ttl = undefined;
+const fetch = require('node-fetch');
+
+module.exports.getSchedule = async(url) => {
+    // url - link to timetable
+    var status = 0, timetable = null;
+
+
 
     // Status:
-    // 0 - no link for ttl
+    // 0 - no link for timetable
     // 1 - have HTML
     // 2 - timetable json ready
     // 3 - error
 
     const checkURL = () => {
-        try{
-            url = context?.req?.cookies?.url;
-            if(url) status = 1;
-        } catch(e) {
-            console.log(e);
-            status = 3;
-        }
+        var re = new RegExp(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(:[0-9]+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/);
+        if(!!url && re.test(url)) status = 1;
     }
 
     const getPage = async() => {
         try{
             const resp = await fetch(url);
-
             return await resp.text();
         } catch(e) {
             console.log(e);
@@ -79,7 +78,7 @@ const getSchedule = async(context) => {
                         .replace(/\sid='color\d'/, "")
                         .replace(/\sid='color'/, "")
                 )
-                .filter(line => line.match(/\S/g));
+                .filter(line => line.match(/\S/g))
 
 
             status = 2;
@@ -90,21 +89,22 @@ const getSchedule = async(context) => {
         }
     }
 
+    const stringsToHtml = (arr) => arr.map((val, k) => {
+        let pos = val.indexOf('>');
+        val = val.slice(pos + 1);
+        pos = val.indexOf('<');
+
+        return pos >= 0 ? `<div style='font-weight: bold'>${val.slice(0, pos)}</div>${val.slice(pos)}` : `<div style='font-weight: bold'>${val}</div>`;
+    });
+
     const process = async() => {
         var html;
 
-        await checkURL();
+        checkURL();
         if (status === 1) html = await getPage();
-        if (status === 1) return ttl = await parsePage(html);
+        if (status === 1) timetable = stringsToHtml(await parsePage(html));
+        return { timetable, status };
     }
 
-    await process();
-    return {
-        props: {
-            timetable: ttl ? ttl : '',
-            status: status,
-        }
-    }
+    return await process();
 }
-
-export default getSchedule;
