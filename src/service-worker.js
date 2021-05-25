@@ -41,7 +41,10 @@ registerRoute(
       return false;
     } // Return true to signal that we want to use the handler.
 
-    return true;
+    if(
+      url.pathname === '/' || url.pathname.endsWith('.png') || url.pathname.endsWith('.ico')
+    ) return true;
+    return false;
   },
   createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html')
 );
@@ -63,10 +66,31 @@ registerRoute(
 
 // This allows the web app to trigger skipWaiting via
 // registration.waiting.postMessage({type: 'SKIP_WAITING'})
-self.addEventListener('message', (event) => {
-  if (event.data && event.data.type === 'SKIP_WAITING') {
-    self.skipWaiting();
-  }
-});
+// self.addEventListener('message', (event) => {
+//   if (event.data && event.data.type === 'SKIP_WAITING') {
+//     self.skipWaiting();
+//   }
+// });
 
-// Any other custom service worker logic can go here.
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.open(event.request.url).then(function(cache) {
+      return cache.match(event.request).then(function (response) {
+        if(navigator.onLine){
+          return fetch(event.request).then(function(response) {
+            if(event.request.method == 'GET'){
+              cache.put(event.request, response.clone());
+            }
+            return response;
+          });
+        }else{
+          if(response){
+            return response
+          }else{
+            return null
+          }
+        }
+      });
+    })
+  );
+});

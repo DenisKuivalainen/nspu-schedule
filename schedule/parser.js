@@ -1,4 +1,16 @@
 const fetch = require('node-fetch');
+const { getTTFB } = require('web-vitals');
+
+module.exports.getCode = (status) => {
+    switch (status) {
+        case 2:
+            return 200;
+        case 3:
+            return 500;
+        default:
+            return 400;
+    }
+}
 
 module.exports.getSchedule = async(url) => {
     // url - link to timetable
@@ -27,7 +39,7 @@ module.exports.getSchedule = async(url) => {
         }
     }
 
-    const parsePage = async(html) => {
+    const getCells = async(html) => {
         try{
             const trs = html
                 .split("<table")
@@ -89,6 +101,38 @@ module.exports.getSchedule = async(url) => {
         }
     }
 
+    const getTtl = (list) => {
+        const regExFind = regex => str => regex.test(str.toLowerCase());
+        const findInList = regex => list.findIndex(regExFind(regex));
+
+        var object = {};
+
+        const числитель = findInList(/числитель/gm);
+        const знаменатель = findInList(/знаменатель/gm);
+        const mo = findInList(/понедельник/gm);
+        const ti = findInList(/вторник/gm);
+        const ke = findInList(/среда/gm);
+        const to = findInList(/четверг/gm);
+        const pe = findInList(/пятница/gm);
+        const la = findInList(/суббота/gm);
+
+        object.week = {
+            type: regExFind(/текущая неделя/gm)(list[числитель]) > 0 ? 0 : 1,
+            chisl: list[числитель].substr(list[числитель].indexOf('>') + 1),
+            znam: list[знаменатель].substr(list[знаменатель].indexOf('>') + 1),
+        }
+        object.days = {
+            mo: list.slice(mo + 1, ti),
+            ti: list.slice(ti + 1, ke),
+            ke: list.slice(ke + 1, to),
+            to: list.slice(to + 1, pe),
+            pe: list.slice(pe + 1, la),
+            la: list.slice(la + 1),
+        }
+
+        return object;
+    }
+
     const stringsToHtml = (arr) => arr.map((val, k) => {
         let pos = val.indexOf('>');
         val = val.slice(pos + 1);
@@ -102,7 +146,7 @@ module.exports.getSchedule = async(url) => {
 
         checkURL();
         if (status === 1) html = await getPage();
-        if (status === 1) timetable = stringsToHtml(await parsePage(html));
+        if (status === 1) timetable = await getCells(html).then(getTtl);
         return { timetable, status };
     }
 
