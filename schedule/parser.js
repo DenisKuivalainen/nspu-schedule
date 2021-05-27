@@ -101,6 +101,25 @@ module.exports.getSchedule = async(url) => {
         }
     }
 
+    const parseDayTtl = (arr) => {
+        const sliceStr = (str) => str.slice(str.indexOf('>') + 1)
+        let obj = {};
+        let time = '';
+        let ttl = [];
+
+        arr.map(val => {
+            let test = /align/gm.test(val) && (val.slice(0, 1) !== '>' || val.slice(1, 2) !== '>');
+            if (!test) {
+                if (ttl.length > 0) obj = {...obj, [time]: stringsToHtml(ttl)};
+                ttl = [];
+                time = sliceStr(val);
+            } else {
+                ttl.push(sliceStr(val));
+            }
+        });
+        return {...obj, [time]: stringsToHtml(ttl)};
+    }
+
     const getTtl = (list) => {
         const regExFind = regex => str => regex.test(str.toLowerCase());
         const findInList = regex => list.findIndex(regExFind(regex));
@@ -122,12 +141,12 @@ module.exports.getSchedule = async(url) => {
             znam: list[знаменатель].substr(list[знаменатель].indexOf('>') + 1),
         }
         object.days = {
-            mo: list.slice(mo + 1, ti),
-            ti: list.slice(ti + 1, ke),
-            ke: list.slice(ke + 1, to),
-            to: list.slice(to + 1, pe),
-            pe: list.slice(pe + 1, la),
-            la: list.slice(la + 1),
+            mo: parseDayTtl(list.slice(mo + 1, ti)),
+            ti: parseDayTtl(list.slice(ti + 1, ke)),
+            ke: parseDayTtl(list.slice(ke + 1, to)),
+            to: parseDayTtl(list.slice(to + 1, pe)),
+            pe: parseDayTtl(list.slice(pe + 1, la)),
+            la: parseDayTtl(list.slice(la + 1)),
         }
 
         return object;
@@ -138,7 +157,7 @@ module.exports.getSchedule = async(url) => {
         val = val.slice(pos + 1);
         pos = val.indexOf('<');
 
-        return pos >= 0 ? `<div style='font-weight: bold'>${val.slice(0, pos)}</div>${val.slice(pos)}` : `<div style='font-weight: bold'>${val}</div>`;
+        return pos >= 0 ? `<div className="ttl_head">${val.slice(0, pos)}</div><div className="ttl_desc">${val.slice(pos)}</div>` : `<div className="ttl_head">${val}</div>`;
     });
 
     const process = async() => {
