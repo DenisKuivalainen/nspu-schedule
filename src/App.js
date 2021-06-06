@@ -30,11 +30,11 @@ const AppContent = () => {
       return;
     }
     else await setUrl(true);
-    // TEST \/
-    await setData(ex);
-    await setLoaded(true);
-    return;
-    // TEST /\
+    // // TEST \/
+    // await setData(ex);
+    // await setLoaded(true);
+    // return;
+    // // TEST /\
     try {
       const res = await fetch('/schedule');
       if(!res.ok) return;
