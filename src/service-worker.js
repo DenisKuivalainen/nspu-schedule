@@ -42,7 +42,7 @@ registerRoute(
     } // Return true to signal that we want to use the handler.
 
     if(
-      url.pathname === '/' || url.pathname.endsWith('.png') || url.pathname.endsWith('.ico')
+      url.pathname.endsWith('.png') || url.pathname.endsWith('.ico')
     ) return true;
     return false;
   },

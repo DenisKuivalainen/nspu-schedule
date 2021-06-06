@@ -3,7 +3,7 @@ import './App.css';
 import { useEffect, useMemo, useState } from 'react';
 import ex from './ex.json';
 import { useCookies } from 'react-cookie';
-import { AppBar, Box, Button, Card, Container, createMuiTheme, CssBaseline, LinearProgress, Paper, Tab, Tabs, TextField, ThemeProvider, Typography, useTheme } from '@material-ui/core';
+import { AppBar, Box, Button, ButtonGroup, Card, Container, createMuiTheme, CssBaseline, Grid, LinearProgress, Paper, Tab, Tabs, TextField, ThemeProvider, Typography, useTheme } from '@material-ui/core';
 import SwipeableViews from 'react-swipeable-views';
 import * as colors from '@material-ui/core/colors';
 import { ReplayRounded } from '@material-ui/icons';
@@ -52,7 +52,7 @@ const AppContent = () => {
   if(!loaded) return <NotLoaded />;
   if(!url) return <NoUrl />;
   if(!data) return <NotFetched reload={checkAndFetch} />;
-  return <Timetable />
+  return <Timetable data={data} />
 }
 
 export default () => {
@@ -206,7 +206,7 @@ const TabPannel = (props) => {
   );
 }
 
-const Timetable = () => {
+const Timetable = ({data}) => {
   const a11yProps = (index) => {
     return {
       id: `full-width-tab-${index}`,
@@ -216,14 +216,46 @@ const Timetable = () => {
 
   const theme = useTheme();
   const [value, setValue] = useState(0);
+  const [day, setDay] = useState(0);
+  const [ttl, setTtl] = useState();
+  const [title, setTitle] = useState("");
+
+  const weekTtl = (obj, n) => {
+    return Object.entries(obj).map(val => {
+      return [
+        val[0],
+        val[1].length > 1 ? val[1][n] : val[1][0]
+      ]
+    })
+  }
+  const currentDay = () => {
+    let today = (new Date).getDay() - 1;
+    if(today < 0) today = 0;
+    setTtl(weekTtl(data.days[days[today][1]], data.week.type));
+    setTitle(getTitle(today, data.week.type));
+  }
+  useEffect(currentDay, []);
+
+  const setWeek = (n) => {
+    setTtl(weekTtl(data.days[days[day - 1][1]], n))
+    setTitle(getTitle(day - 1, n));
+    setValue(0);
+    setDay(0);
+  }
 
   const handleChange = (event, newValue) => {
+    setDay(0);
     setValue(newValue);
   };
 
   const handleChangeIndex = (index) => {
+    setDay(0);
     setValue(index);
   };
+
+  const getTitle = (d, w) => {
+    return `${days[d][0]}, ${w === 0 ? "числитель" : "знаменатель"}`
+  }
 
   return (
     <>
@@ -243,12 +275,84 @@ const Timetable = () => {
         onChangeIndex={handleChangeIndex}
       >
         <TabPannel value={value} index={0} dir={theme.direction}>
-          Item One
+          <p>
+            {title}
+          </p>
+          {ttl && ttl.map(val => {
+            if (!val[1]) return;
+            return (<p>
+              {val[0]}
+              <div dangerouslySetInnerHTML={{__html: val[1]}}></div>
+            </p>)
+          })}
         </TabPannel>
         <TabPannel value={value} index={1} dir={theme.direction}>
-          Item Two
+          <Days
+            day={day} setDay={setDay}
+            week={data.week.type} setWeek={setWeek}
+          />
         </TabPannel>
       </SwipeableViews>
     </>
+  );
+}
+
+const days = [
+  ["Понедельник", "mo"],
+  ["Вторник", "ti"],
+  ["Среда", "ke"],
+  ["Четверг", "to"],
+  ["Пятница", "pe"],
+  ["Суббота", "la"]
+];
+
+const Days = ({day, setDay, week, setWeek}) => {
+
+  return (
+    <Grid container spacing={3} style={{marginTop: "15vw"}}>
+      {days.map((val, k) => {
+        const thisSelected = day === k + 1;
+        const today = (new Date).getDay() === k + 1; // 0 is sunday
+
+        return (
+          <Grid 
+            item xs={12}
+            style={{marginLeft: "15%", marginRight: "15%"}}
+          >
+            {!thisSelected && (
+              <Button
+                onClick={() => setDay(k + 1)}
+                variant={"contained"}
+                color={today ? "secondary" : "default"}
+                style={{width: "100%"}}
+              >
+                {val[0]}
+              </Button>
+            )}
+            {thisSelected && (
+              <ButtonGroup
+                variant={"contained"}
+                style={{width: "100%"}}
+              >
+                <Button
+                  style={{width: "50%"}}
+                  color={week === 0 && today ? "secondary" : "default"}
+                  onClick={() => setWeek(0)}
+                >
+                  Числитель
+                </Button>
+                <Button
+                  style={{width: "50%"}}
+                  color={week === 1 && today ? "secondary" : "default"}
+                  onClick={() => setWeek(1)}
+                >
+                  Знаменатель
+                </Button>
+              </ButtonGroup>
+            )}
+          </ Grid>
+        )
+      })}
+    </Grid>
   );
 }

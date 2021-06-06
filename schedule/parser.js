@@ -14,6 +14,8 @@ module.exports.getCode = (status) => {
 
 module.exports.getSchedule = async(url) => {
     // url - link to timetable
+    url = decodeURIComponent(url);
+    
     var status = 0, timetable = null;
 
 
@@ -153,11 +155,13 @@ module.exports.getSchedule = async(url) => {
     }
 
     const stringsToHtml = (arr) => arr.map((val, k) => {
-        let pos = val.indexOf('>');
-        val = val.slice(pos + 1);
-        pos = val.indexOf('<');
+        
+        // let pos = val.indexOf('>');
+        // val = val.slice(pos + 1);
+        // pos = val.indexOf('<');
+        if (val.length === 0) return undefined;
 
-        return pos >= 0 ? `<div className="ttl_head">${val.slice(0, pos)}</div><div className="ttl_desc">${val.slice(pos)}</div>` : `<div className="ttl_head">${val}</div>`;
+        return /<br>/.test(val) ? `<div className="ttl_head">${val.slice(0, val.indexOf('<') - 1)}</div><div className="ttl_desc">${val.slice(val.indexOf('>') + 1)}</div>` : `<div className="ttl_head">${val}</div>`;
     });
 
     const process = async() => {
