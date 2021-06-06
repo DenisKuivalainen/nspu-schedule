@@ -25,12 +25,14 @@ const AppContent = () => {
     await setUrl(false);
     await setData(null);
 
-    if(!cookies.url) return;
+    if(!cookies.url) {
+      await setLoaded(true);
+      return;
+    }
     else await setUrl(true);
-    console.log(1)
     // TEST \/
     await setData(ex);
-    setLoaded(true);
+    await setLoaded(true);
     return;
     // TEST /\
     try {
