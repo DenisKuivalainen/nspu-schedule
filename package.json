@@ -35,7 +35,7 @@
   "scripts": {
     "dev:web": "react-scripts start",
     "dev:serv": "nodemon server.js",
-    "start": "now --prod",
+    "start": "node server.js",
     "build": "node server/build_text.js && npm cache clean --force && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
