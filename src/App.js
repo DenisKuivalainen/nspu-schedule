@@ -38,7 +38,7 @@ const AppContent = () => {
     // TEST /\
     try {
       const res = await fetch('/schedule');
-      if(res.ok) {
+      if(res.status === 200) {
         const resData = await res.json();
         await setData(resData);
       };
