@@ -7,91 +7,298 @@
   "days": {
     "mo": {
       "8:30-10:00": [
-        "<div className=\"ttl_head\">Иностранный язык 1 п/гр</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=448'>Б.В.Сапрыгин</a> (л.з.), <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Afa696cb1eda74501903a8c7e2dcf9c5a%40thread.tacv2%2F1598698026526%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%2522b541f7a1-a947-44f3-8ea1-553dc3513397%2522%257d%26anon%3Dtrue&type=meetup-join&deeplink\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "Иностранный язык 1 п/гр",
+            "desc": "доц. <a href='teacher_shedule.php?id=448'>Б.В.Сапрыгин</a> (л.з.), <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Afa696cb1eda74501903a8c7e2dcf9c5a%40thread.tacv2%2F1598698026526%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%2522b541f7a1-a947-44f3-8ea1-553dc3513397%2522%257d%26anon%3Dtrue&type=meetup-join&deeplink\" target='_blank'>Ссылка</a>"
+          }
+        ]
       ],
       "10:10-11:40": [
-        "<div className=\"ttl_head\">Основы журналистики с 22.02</div><div className=\"ttl_desc\"> ассистент <a href='teacher_shedule.php?id=1352'>А.Д.Мершиева</a> (п.з.), <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3A098e541645474b55a3d89089dc4484c2%40thread.tacv2%2F1603959428202%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%2522008a0017-ed55-495a-aa31-f76c5675a502%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=68937c41-3947-46d6-8982-a2cf66c20200&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "Основы журналистики с 22.02",
+            "desc": "ассистент <a href='teacher_shedule.php?id=1352'>А.Д.Мершиева</a> (п.з.), <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3A098e541645474b55a3d89089dc4484c2%40thread.tacv2%2F1603959428202%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%2522008a0017-ed55-495a-aa31-f76c5675a502%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=68937c41-3947-46d6-8982-a2cf66c20200&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true\" target='_blank'>Ссылка</a>",
+            "from": 1613944800000
+          }
+        ]
       ],
       "12:10-13:40": [
-        "<div className=\"ttl_head\">Редакционный менеджмент и медиапроектирование по 22.03</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=390'>И.Г.Катенева</a> (л.), <a href=\"https://us02web.zoom.us/j/83545175816?pwd=QlFLYy9jZWtGZlEzWDlSdGkvdS9ldz09\" target='_blank'>Ссылка</a>   Идентификатор 835 4517 5816   Код доступа 809176</div>"
+        [
+          {
+            "titl": "Редакционный менеджмент и медиапроектирование по 22.03",
+            "desc": "доц. <a href='teacher_shedule.php?id=390'>И.Г.Катенева</a> (л.), <a href=\"https://us02web.zoom.us/j/83545175816?pwd=QlFLYy9jZWtGZlEzWDlSdGkvdS9ldz09\" target='_blank'>Ссылка</a>   Идентификатор 835 4517 5816   Код доступа 809176",
+            "till": 1616364000000
+          }
+        ]
       ],
       "14:10-15:40": [
-        "<div className=\"ttl_head\">Иностранный язык 2 п/гр</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=448'>Б.В.Сапрыгин</a> (л.з.), <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Afa696cb1eda74501903a8c7e2dcf9c5a%40thread.tacv2%2F1598698026526%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%2522b541f7a1-a947-44f3-8ea1-553dc3513397%2522%257d%26anon%3Dtrue&type=meetup-join&deeplink\" target='_blank'>Ссылка</a></div>",
-        "<div className=\"ttl_head\">Иностранный язык 3 п/гр</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=448'>Б.В.Сапрыгин</a> (л.з.), <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Afa696cb1eda74501903a8c7e2dcf9c5a%40thread.tacv2%2F1598698026526%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%2522b541f7a1-a947-44f3-8ea1-553dc3513397%2522%257d%26anon%3Dtrue&type=meetup-join&deeplink\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "Иностранный язык 2 п/гр",
+            "desc": "доц. <a href='teacher_shedule.php?id=448'>Б.В.Сапрыгин</a> (л.з.), <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Afa696cb1eda74501903a8c7e2dcf9c5a%40thread.tacv2%2F1598698026526%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%2522b541f7a1-a947-44f3-8ea1-553dc3513397%2522%257d%26anon%3Dtrue&type=meetup-join&deeplink\" target='_blank'>Ссылка</a>"
+          }
+        ],
+        [
+          {
+            "titl": "Иностранный язык 3 п/гр",
+            "desc": "доц. <a href='teacher_shedule.php?id=448'>Б.В.Сапрыгин</a> (л.з.), <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Afa696cb1eda74501903a8c7e2dcf9c5a%40thread.tacv2%2F1598698026526%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%2522b541f7a1-a947-44f3-8ea1-553dc3513397%2522%257d%26anon%3Dtrue&type=meetup-join&deeplink\" target='_blank'>Ссылка</a>"
+          }
+        ]
       ],
       "15:50-17:20": [
-        "<div className=\"ttl_head\">Иностранный язык 3 п/гр</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=448'>Б.В.Сапрыгин</a> (л.з.), <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Afa696cb1eda74501903a8c7e2dcf9c5a%40thread.tacv2%2F1598698026526%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%2522b541f7a1-a947-44f3-8ea1-553dc3513397%2522%257d%26anon%3Dtrue&type=meetup-join&deeplink\" target='_blank'>Ссылка</a></div>",
-        "<div className=\"ttl_head\">Иностранный язык 2 п/гр</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=448'>Б.В.Сапрыгин</a> (л.з.), <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Afa696cb1eda74501903a8c7e2dcf9c5a%40thread.tacv2%2F1598698026526%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%2522b541f7a1-a947-44f3-8ea1-553dc3513397%2522%257d%26anon%3Dtrue&type=meetup-join&deeplink\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "Иностранный язык 3 п/гр",
+            "desc": "доц. <a href='teacher_shedule.php?id=448'>Б.В.Сапрыгин</a> (л.з.), <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Afa696cb1eda74501903a8c7e2dcf9c5a%40thread.tacv2%2F1598698026526%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%2522b541f7a1-a947-44f3-8ea1-553dc3513397%2522%257d%26anon%3Dtrue&type=meetup-join&deeplink\" target='_blank'>Ссылка</a>"
+          }
+        ],
+        [
+          {
+            "titl": "Иностранный язык 2 п/гр",
+            "desc": "доц. <a href='teacher_shedule.php?id=448'>Б.В.Сапрыгин</a> (л.з.), <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Afa696cb1eda74501903a8c7e2dcf9c5a%40thread.tacv2%2F1598698026526%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%2522b541f7a1-a947-44f3-8ea1-553dc3513397%2522%257d%26anon%3Dtrue&type=meetup-join&deeplink\" target='_blank'>Ссылка</a>"
+          }
+        ]
       ]
     },
     "ti": {
       "10:10-11:40": [
-        "<div className=\"ttl_head\">Логика с 16.02</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=889'>О.С.Рощина</a> (л.), <a href='room_shedule.php?id=467'>а. 109\r</a>, <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ab92b92338bf1495f826f8e32cb37c63d%40thread.tacv2%2F1601281378739%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%252257371982-9c41-4cd9-bb2e-6fcc519dbdef%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=51123c86-1e3a-4b8f-bf7f-0e8ddf8c0c08&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true\" target='_blank'>Ссылка</a></div>",
-        "<div className=\"ttl_head\">Редакционный менеджмент и медиапроектирование с 23.02</div><div className=\"ttl_desc\"> ассистент <a href='teacher_shedule.php?id=1352'>А.Д.Мершиева</a> (п.з.), <a href='room_shedule.php?id=467'>а. 109\r</a>, <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ab92b92338bf1495f826f8e32cb37c63d%40thread.tacv2%2F1601281378739%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%252257371982-9c41-4cd9-bb2e-6fcc519dbdef%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=64ca6d30-d1e5-4f38-8c40-b4b87b91b97c&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "Логика с 16.02",
+            "desc": "доц. <a href='teacher_shedule.php?id=889'>О.С.Рощина</a> (л.), <a href='room_shedule.php?id=467'>а. 109\r</a>, <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ab92b92338bf1495f826f8e32cb37c63d%40thread.tacv2%2F1601281378739%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%252257371982-9c41-4cd9-bb2e-6fcc519dbdef%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=51123c86-1e3a-4b8f-bf7f-0e8ddf8c0c08&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true\" target='_blank'>Ссылка</a>",
+            "from": 1613426400000
+          }
+        ],
+        [
+          {
+            "titl": "Редакционный менеджмент и медиапроектирование с 23.02",
+            "desc": "ассистент <a href='teacher_shedule.php?id=1352'>А.Д.Мершиева</a> (п.з.), <a href='room_shedule.php?id=467'>а. 109\r</a>, <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ab92b92338bf1495f826f8e32cb37c63d%40thread.tacv2%2F1601281378739%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%252257371982-9c41-4cd9-bb2e-6fcc519dbdef%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=64ca6d30-d1e5-4f38-8c40-b4b87b91b97c&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true\" target='_blank'>Ссылка</a>",
+            "from": 1614031200000
+          }
+        ]
       ],
       "12:10-13:40": [
-        "<div className=\"ttl_head\">Элективная дисциплина по физической культуре и спорту: прикладная физическая культура</div><div className=\"ttl_desc\"> ст.преп. <a href='teacher_shedule.php?id=851'>Ю.А.Греф</a>, доц. <a href='teacher_shedule.php?id=832'>С.В.Шкляров</a> (п.з.)</div>"
+        [
+          {
+            "titl": "Элективная дисциплина по физической культуре и спорту: прикладная физическая культура",
+            "desc": "ст.преп. <a href='teacher_shedule.php?id=851'>Ю.А.Греф</a>, доц. <a href='teacher_shedule.php?id=832'>С.В.Шкляров</a> (п.з.)"
+          }
+        ]
       ],
       "14:10-15:40": [
-        "<div className=\"ttl_head\">Редакционный менеджмент и медиапроектирование с 16.02</div><div className=\"ttl_desc\"> ассистент <a href='teacher_shedule.php?id=1352'>А.Д.Мершиева</a> (п.з.), <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3A098e541645474b55a3d89089dc4484c2%40thread.tacv2%2F1603959428202%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%2522008a0017-ed55-495a-aa31-f76c5675a502%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=68937c41-3947-46d6-8982-a2cf66c20200&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true\" target='_blank'>Ссылка</a></div>",
-        "<div className=\"ttl_head\">Практикум по русскому языку с 09.02</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=1600'>А.В.Боброва</a> (п.з.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a087802e93c1e45359a4ec61f6ddc4aa2%40thread.tacv2/1603788715174?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%221e7357a2-62b1-4f13-ad2f-9bea4b60773e%22%7d\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "Редакционный менеджмент и медиапроектирование с 16.02",
+            "desc": "ассистент <a href='teacher_shedule.php?id=1352'>А.Д.Мершиева</a> (п.з.), <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3A098e541645474b55a3d89089dc4484c2%40thread.tacv2%2F1603959428202%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%2522008a0017-ed55-495a-aa31-f76c5675a502%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=68937c41-3947-46d6-8982-a2cf66c20200&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true\" target='_blank'>Ссылка</a>",
+            "from": 1613426400000
+          }
+        ],
+        [
+          {
+            "titl": "Практикум по русскому языку с 09.02",
+            "desc": "доц. <a href='teacher_shedule.php?id=1600'>А.В.Боброва</a> (п.з.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a087802e93c1e45359a4ec61f6ddc4aa2%40thread.tacv2/1603788715174?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%221e7357a2-62b1-4f13-ad2f-9bea4b60773e%22%7d\" target='_blank'>Ссылка</a>",
+            "from": 1612821600000
+          }
+        ]
       ]
     },
     "ke": {
       "10:10-11:40": [
-        "<div className=\"ttl_head\">Профессионально-ознакомительная практика  12.05</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=387'>Е.В.Евдокимова</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a4576d393e39447b09714c36ed37b5ce8%40thread.tacv2/1598616253008?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%2218a9d5fd-abc0-4311-8bf6-8a1779338f8d%22%7d\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "Профессионально-ознакомительная практика  12.05",
+            "desc": "доц. <a href='teacher_shedule.php?id=387'>Е.В.Евдокимова</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a4576d393e39447b09714c36ed37b5ce8%40thread.tacv2/1598616253008?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%2218a9d5fd-abc0-4311-8bf6-8a1779338f8d%22%7d\" target='_blank'>Ссылка</a>"
+          }
+        ]
       ],
       "12:10-13:40": [
-        "<div className=\"ttl_head\">Профессионально-ознакомительная практика  12.05</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=387'>Е.В.Евдокимова</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a4576d393e39447b09714c36ed37b5ce8%40thread.tacv2/1598616253008?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%2218a9d5fd-abc0-4311-8bf6-8a1779338f8d%22%7d\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "Профессионально-ознакомительная практика  12.05",
+            "desc": "доц. <a href='teacher_shedule.php?id=387'>Е.В.Евдокимова</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a4576d393e39447b09714c36ed37b5ce8%40thread.tacv2/1598616253008?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%2218a9d5fd-abc0-4311-8bf6-8a1779338f8d%22%7d\" target='_blank'>Ссылка</a>"
+          }
+        ]
       ],
       "14:10-15:40": [
-        "<div className=\"ttl_head\">Профессионально-ознакомительная практика 12.05</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=387'>Е.В.Евдокимова</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a4576d393e39447b09714c36ed37b5ce8%40thread.tacv2/1598616253008?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%2218a9d5fd-abc0-4311-8bf6-8a1779338f8d%22%7d\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "Профессионально-ознакомительная практика 12.05",
+            "desc": "доц. <a href='teacher_shedule.php?id=387'>Е.В.Евдокимова</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a4576d393e39447b09714c36ed37b5ce8%40thread.tacv2/1598616253008?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%2218a9d5fd-abc0-4311-8bf6-8a1779338f8d%22%7d\" target='_blank'>Ссылка</a>"
+          }
+        ]
       ],
       "15:50-17:20": [
-        "<div className=\"ttl_head\">Профессионально-ознакомительная практика 12.05</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=387'>Е.В.Евдокимова</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a4576d393e39447b09714c36ed37b5ce8%40thread.tacv2/1598616253008?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%2218a9d5fd-abc0-4311-8bf6-8a1779338f8d%22%7d\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "Профессионально-ознакомительная практика 12.05",
+            "desc": "доц. <a href='teacher_shedule.php?id=387'>Е.В.Евдокимова</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a4576d393e39447b09714c36ed37b5ce8%40thread.tacv2/1598616253008?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%2218a9d5fd-abc0-4311-8bf6-8a1779338f8d%22%7d\" target='_blank'>Ссылка</a>"
+          }
+        ]
       ]
     },
     "to": {
       "12:10-13:40": [
-        null,
-        "<div className=\"ttl_head\">Логика с 25.02</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=889'>О.С.Рощина</a> (п.з.), <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ab92b92338bf1495f826f8e32cb37c63d%40thread.tacv2%2F1601281378739%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%252257371982-9c41-4cd9-bb2e-6fcc519dbdef%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=51123c86-1e3a-4b8f-bf7f-0e8ddf8c0c08&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": ""
+          }
+        ],
+        [
+          {
+            "titl": "Логика с 25.02",
+            "desc": "доц. <a href='teacher_shedule.php?id=889'>О.С.Рощина</a> (п.з.), <a href=\"https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2Fmeetup-join%2F19%3Ab92b92338bf1495f826f8e32cb37c63d%40thread.tacv2%2F1601281378739%3Fcontext%3D%257b%2522Tid%2522%253a%25227f50e326-9a00-461f-bbe2-f6a63647079f%2522%252c%2522Oid%2522%253a%252257371982-9c41-4cd9-bb2e-6fcc519dbdef%2522%257d%26anon%3Dtrue&type=meetup-join&deeplinkId=51123c86-1e3a-4b8f-bf7f-0e8ddf8c0c08&directDl=true&msLaunch=true&enableMobilePage=true&suppressPrompt=true\" target='_blank'>Ссылка</a>",
+            "from": 1614204000000
+          }
+        ]
       ],
       "14:10-15:40": [
-        "<div className=\"ttl_head\">Практикум по русскому языку с 18.02</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=1600'>А.В.Боброва</a> (п.з.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a087802e93c1e45359a4ec61f6ddc4aa2%40thread.tacv2/1603788715174?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%221e7357a2-62b1-4f13-ad2f-9bea4b60773e%22%7d\" target='_blank'>Ссылка</a></div>",
-        "<div className=\"ttl_head\">История зарубежной литературы: античная литература - литература XIX века, 1 часть с 11.02-11.03</div><div className=\"ttl_desc\"> доцент <a href='teacher_shedule.php?id=1450'>Н.А.Агеева</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a807fc3eabb9d4622b7cebaec966931dc%40thread.tacv2/1598785147175?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22afd13275-0e02-4ff6-aa20-db7557e6e2dc%22%7d\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "Практикум по русскому языку с 18.02",
+            "desc": "доц. <a href='teacher_shedule.php?id=1600'>А.В.Боброва</a> (п.з.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a087802e93c1e45359a4ec61f6ddc4aa2%40thread.tacv2/1603788715174?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%221e7357a2-62b1-4f13-ad2f-9bea4b60773e%22%7d\" target='_blank'>Ссылка</a>",
+            "from": 1613599200000
+          }
+        ],
+        [
+          {
+            "titl": "История зарубежной литературы: античная литература - литература XIX века, 1 часть с 11.02-11.03",
+            "desc": "доцент <a href='teacher_shedule.php?id=1450'>Н.А.Агеева</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a807fc3eabb9d4622b7cebaec966931dc%40thread.tacv2/1598785147175?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22afd13275-0e02-4ff6-aa20-db7557e6e2dc%22%7d\" target='_blank'>Ссылка</a>",
+            "from": 1612994400000,
+            "till": 1615413600000
+          }
+        ]
       ],
       "15:50-17:20": [
-        "<div className=\"ttl_head\">История зарубежной литературы: античная литература - литература XIX века, 1 часть с 18.02</div><div className=\"ttl_desc\"> доцент <a href='teacher_shedule.php?id=1450'>Н.А.Агеева</a> (п.з.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a807fc3eabb9d4622b7cebaec966931dc%40thread.tacv2/1598785147175?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22afd13275-0e02-4ff6-aa20-db7557e6e2dc%22%7d\" target='_blank'>Ссылка</a></div>",
-        "<div className=\"ttl_head\">История зарубежной литературы: античная литература - литература XIX века, 1 часть  с 11.02 -25.02</div><div className=\"ttl_desc\"> доцент <a href='teacher_shedule.php?id=1450'>Н.А.Агеева</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a807fc3eabb9d4622b7cebaec966931dc%40thread.tacv2/1598785147175?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22afd13275-0e02-4ff6-aa20-db7557e6e2dc%22%7d\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "История зарубежной литературы: античная литература - литература XIX века, 1 часть с 18.02",
+            "desc": "доцент <a href='teacher_shedule.php?id=1450'>Н.А.Агеева</a> (п.з.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a807fc3eabb9d4622b7cebaec966931dc%40thread.tacv2/1598785147175?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22afd13275-0e02-4ff6-aa20-db7557e6e2dc%22%7d\" target='_blank'>Ссылка</a>",
+            "from": 1613599200000
+          }
+        ],
+        [
+          {
+            "titl": "История зарубежной литературы: античная литература - литература XIX века, 1 часть  с 11.02 -25.02",
+            "desc": "доцент <a href='teacher_shedule.php?id=1450'>Н.А.Агеева</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a807fc3eabb9d4622b7cebaec966931dc%40thread.tacv2/1598785147175?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22afd13275-0e02-4ff6-aa20-db7557e6e2dc%22%7d\" target='_blank'>Ссылка</a>",
+            "from": 1612994400000,
+            "till": 1614204000000
+          }
+        ]
       ]
     },
     "pe": {
       "8:30-10:00": [
-        "<div className=\"ttl_head\">Современный русский язык с 05.03 -02.04</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=421'>Ю.М.Бокарева</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a4576d393e39447b09714c36ed37b5ce8%40thread.tacv2/1598616253008?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%2218a9d5fd-abc0-4311-8bf6-8a1779338f8d%22%7d\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "Современный русский язык с 05.03 -02.04",
+            "desc": "доц. <a href='teacher_shedule.php?id=421'>Ю.М.Бокарева</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a4576d393e39447b09714c36ed37b5ce8%40thread.tacv2/1598616253008?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%2218a9d5fd-abc0-4311-8bf6-8a1779338f8d%22%7d\" target='_blank'>Ссылка</a>",
+            "from": 1614895200000,
+            "till": 1617310800000
+          }
+        ]
       ],
       "10:10-11:40": [
-        "<div className=\"ttl_head\">Современный русский язык с 19.03 -16.04</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=421'>Ю.М.Бокарева</a> (п.з.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a4576d393e39447b09714c36ed37b5ce8%40thread.tacv2/1598616253008?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%2218a9d5fd-abc0-4311-8bf6-8a1779338f8d%22%7d\" target='_blank'>Ссылка</a></div>",
-        "<div className=\"ttl_head\">История отечественной литературы: древнерусская литература - литература XIX века, 1 часть с 26.02 -12.03</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=411'>Е.Г.Николаева</a> (п.з.), <a href='room_shedule.php?id=467'>а. 109\r</a>;<br>Культурология с 27.03,<br> доц. <a href='teacher_shedule.php?id=304'>К.В.Луговой</a> (п.з.), <a href='room_shedule.php?id=467'>а. 109\r</a>, <a href=\"https://teams.microsoft.com/l/meetup-join/19%3abca0edcbe6fa4e4aba908160d52b74e6%40thread.tacv2/1598790985468?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22b385a630-5c4e-43f8-83e5-53d98e1e00ec%22%7d\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "Современный русский язык с 19.03 -16.04",
+            "desc": "доц. <a href='teacher_shedule.php?id=421'>Ю.М.Бокарева</a> (п.з.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a4576d393e39447b09714c36ed37b5ce8%40thread.tacv2/1598616253008?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%2218a9d5fd-abc0-4311-8bf6-8a1779338f8d%22%7d\" target='_blank'>Ссылка</a>",
+            "from": 1616104800000,
+            "till": 1618520400000
+          }
+        ],
+        [
+          {
+            "titl": "История отечественной литературы: древнерусская литература - литература XIX века, 1 часть с 26.02 -12.03",
+            "desc": "доц. <a href='teacher_shedule.php?id=411'>Е.Г.Николаева</a> (п.з.), <a href='room_shedule.php?id=467'>а. 109\r</a>",
+            "from": 1614290400000,
+            "till": 1615500000000
+          },
+          {
+            "titl": "Культурология с 27.03",
+            "desc": "доц. <a href='teacher_shedule.php?id=304'>К.В.Луговой</a> (п.з.), <a href='room_shedule.php?id=467'>а. 109\r</a>, <a href=\"https://teams.microsoft.com/l/meetup-join/19%3abca0edcbe6fa4e4aba908160d52b74e6%40thread.tacv2/1598790985468?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22b385a630-5c4e-43f8-83e5-53d98e1e00ec%22%7d\" target='_blank'>Ссылка</a>",
+            "from": 1616796000000
+          }
+        ]
       ],
       "12:10-13:40": [
-        "<div className=\"ttl_head\">История отечественной литературы: древнерусская литература - литература XIX века, 1 часть с 19.02</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=411'>Е.Г.Николаева</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a870c7a9ad1bf4c29b9d840dc87a5662f%40thread.tacv2/1598805488418?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22fed5764e-8d10-468d-a362-b1e99764bbb8%22%7d\" target='_blank'>Ссылка</a></div>",
-        "<div className=\"ttl_head\">Современный русский язык с 12.03-09.04</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=421'>Ю.М.Бокарева</a> (п.з.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a4576d393e39447b09714c36ed37b5ce8%40thread.tacv2/1598616253008?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%2218a9d5fd-abc0-4311-8bf6-8a1779338f8d%22%7d\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "История отечественной литературы: древнерусская литература - литература XIX века, 1 часть с 19.02",
+            "desc": "доц. <a href='teacher_shedule.php?id=411'>Е.Г.Николаева</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a870c7a9ad1bf4c29b9d840dc87a5662f%40thread.tacv2/1598805488418?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22fed5764e-8d10-468d-a362-b1e99764bbb8%22%7d\" target='_blank'>Ссылка</a>",
+            "from": 1613685600000
+          }
+        ],
+        [
+          {
+            "titl": "Современный русский язык с 12.03-09.04",
+            "desc": "доц. <a href='teacher_shedule.php?id=421'>Ю.М.Бокарева</a> (п.з.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a4576d393e39447b09714c36ed37b5ce8%40thread.tacv2/1598616253008?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%2218a9d5fd-abc0-4311-8bf6-8a1779338f8d%22%7d\" target='_blank'>Ссылка</a>",
+            "from": 1615500000000,
+            "till": 1617915600000
+          }
+        ]
       ],
       "14:10-15:40": [
-        "<div className=\"ttl_head\">Основы журналистики с 19.02</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=391'>Л.Н.Кислая</a> (л.), <a href='room_shedule.php?id=467'>а. 109\r</a>, <a href=\"https://teams.microsoft.com/l/meetup-join/19%3abca0edcbe6fa4e4aba908160d52b74e6%40thread.tacv2/1598790985468?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22b385a630-5c4e-43f8-83e5-53d98e1e00ec%22%7d\" target='_blank'>Ссылка</a>;<br>История отечественной литературы: древнерусская литература - литература XIX века, 1 часть с 19.03,<br> доц. <a href='teacher_shedule.php?id=411'>Е.Г.Николаева</a> (п.з.), <a href='room_shedule.php?id=467'>а. 109\r</a>, <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a870c7a9ad1bf4c29b9d840dc87a5662f%40thread.tacv2/1598805488418?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22fed5764e-8d10-468d-a362-b1e99764bbb8%22%7d\" target='_blank'>Ссылка</a></div>",
-        "<div className=\"ttl_head\">Основы журналистики с 19.02-19.03</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=391'>Л.Н.Кислая</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3abca0edcbe6fa4e4aba908160d52b74e6%40thread.tacv2/1598790985468?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22b385a630-5c4e-43f8-83e5-53d98e1e00ec%22%7d\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "Основы журналистики с 19.02",
+            "desc": "доц. <a href='teacher_shedule.php?id=391'>Л.Н.Кислая</a> (л.), <a href='room_shedule.php?id=467'>а. 109\r</a>, <a href=\"https://teams.microsoft.com/l/meetup-join/19%3abca0edcbe6fa4e4aba908160d52b74e6%40thread.tacv2/1598790985468?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22b385a630-5c4e-43f8-83e5-53d98e1e00ec%22%7d\" target='_blank'>Ссылка</a>",
+            "from": 1613685600000
+          },
+          {
+            "titl": "История отечественной литературы: древнерусская литература - литература XIX века, 1 часть с 19.03",
+            "desc": "доц. <a href='teacher_shedule.php?id=411'>Е.Г.Николаева</a> (п.з.), <a href='room_shedule.php?id=467'>а. 109\r</a>, <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a870c7a9ad1bf4c29b9d840dc87a5662f%40thread.tacv2/1598805488418?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22fed5764e-8d10-468d-a362-b1e99764bbb8%22%7d\" target='_blank'>Ссылка</a>",
+            "from": 1616104800000
+          }
+        ],
+        [
+          {
+            "titl": "Основы журналистики с 19.02-19.03",
+            "desc": "доц. <a href='teacher_shedule.php?id=391'>Л.Н.Кислая</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3abca0edcbe6fa4e4aba908160d52b74e6%40thread.tacv2/1598790985468?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22b385a630-5c4e-43f8-83e5-53d98e1e00ec%22%7d\" target='_blank'>Ссылка</a>",
+            "from": 1613685600000,
+            "till": 1616104800000
+          }
+        ]
       ],
       "15:50-17:20": [
-        "<div className=\"ttl_head\">Основы журналистики с 19.02-19.03</div><div className=\"ttl_desc\"> доц. <a href='teacher_shedule.php?id=391'>Л.Н.Кислая</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3abca0edcbe6fa4e4aba908160d52b74e6%40thread.tacv2/1598790985468?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22b385a630-5c4e-43f8-83e5-53d98e1e00ec%22%7d\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "Основы журналистики с 19.02-19.03",
+            "desc": "доц. <a href='teacher_shedule.php?id=391'>Л.Н.Кислая</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3abca0edcbe6fa4e4aba908160d52b74e6%40thread.tacv2/1598790985468?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22b385a630-5c4e-43f8-83e5-53d98e1e00ec%22%7d\" target='_blank'>Ссылка</a>",
+            "from": 1613685600000,
+            "till": 1616104800000
+          }
+        ]
       ]
     },
     "la": {
       "8:30-10:00": [
-        "<div className=\"ttl_head\">Нормативно-правовые и этические основы профессиональной деятельности с 27.02 по 13.03</div><div className=\"ttl_desc\"> ст.преп. <a href='teacher_shedule.php?id=1637'>А.М.Жильников</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a1ebe2279ba4a46778393343db8cee59a%40thread.tacv2/1613549302979?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22ba96ac97-db9a-41b4-aab9-c47ecf0a351d%22%7d\" target='_blank'>Ссылка</a>;<br>Культурология с 20.03,<br> доц. <a href='teacher_shedule.php?id=304'>К.В.Луговой</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3abca0edcbe6fa4e4aba908160d52b74e6%40thread.tacv2/1598790985468?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22b385a630-5c4e-43f8-83e5-53d98e1e00ec%22%7d\" target='_blank'>Ссылка</a></div>"
+        [
+          {
+            "titl": "Нормативно-правовые и этические основы профессиональной деятельности с 27.02 по 13.03",
+            "desc": "ст.преп. <a href='teacher_shedule.php?id=1637'>А.М.Жильников</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a1ebe2279ba4a46778393343db8cee59a%40thread.tacv2/1613549302979?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22ba96ac97-db9a-41b4-aab9-c47ecf0a351d%22%7d\" target='_blank'>Ссылка</a>",
+            "from": 1614376800000,
+            "till": 1615586400000
+          },
+          {
+            "titl": "Культурология с 20.03",
+            "desc": "доц. <a href='teacher_shedule.php?id=304'>К.В.Луговой</a> (л.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3abca0edcbe6fa4e4aba908160d52b74e6%40thread.tacv2/1598790985468?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22b385a630-5c4e-43f8-83e5-53d98e1e00ec%22%7d\" target='_blank'>Ссылка</a>",
+            "from": 1616191200000
+          }
+        ]
       ],
       "10:10-11:40": [
-        "<div className=\"ttl_head\">Нормативно-правовые и этические основы профессиональной деятельности  </div><div className=\"ttl_desc\"> ст.преп. <a href='teacher_shedule.php?id=1637'>А.М.Жильников</a> (п.з.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a1ebe2279ba4a46778393343db8cee59a%40thread.tacv2/1613549302979?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22ba96ac97-db9a-41b4-aab9-c47ecf0a351d%22%7d\" target='_blank'>Ссылка</a></div>",
-        null
+        [
+          {
+            "titl": "Нормативно-правовые и этические основы профессиональной деятельности",
+            "desc": "ст.преп. <a href='teacher_shedule.php?id=1637'>А.М.Жильников</a> (п.з.), <a href=\"https://teams.microsoft.com/l/meetup-join/19%3a1ebe2279ba4a46778393343db8cee59a%40thread.tacv2/1613549302979?context=%7b%22Tid%22%3a%227f50e326-9a00-461f-bbe2-f6a63647079f%22%2c%22Oid%22%3a%22ba96ac97-db9a-41b4-aab9-c47ecf0a351d%22%7d\" target='_blank'>Ссылка</a>"
+          }
+        ],
+        [
+          {
+            "titl": ""
+          }
+        ]
       ]
     }
   }

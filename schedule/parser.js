@@ -159,9 +159,71 @@ module.exports.getSchedule = async(url) => {
         // let pos = val.indexOf('>');
         // val = val.slice(pos + 1);
         // pos = val.indexOf('<');
-        if (val.length === 0) return undefined;
 
-        return /<br>/.test(val) ? `<div className="ttl_head">${val.slice(0, val.indexOf('<') - 1)}</div><div className="ttl_desc">${val.slice(val.indexOf('>') + 1)}</div>` : `<div className="ttl_head">${val}</div>`;
+        // if (val.length === 0) return undefined;
+
+        // return /<br>/.test(val) ? `<div className="ttl_head">${val.slice(0, val.indexOf('<') - 1)}</div><div className="ttl_desc">${val.slice(val.indexOf('>') + 1)}</div>` : `<div className="ttl_head">${val}</div>`;
+        let arr = val.split("<br>");
+        arr = arr.map(v => {
+            while (v.startsWith(' ')) {
+                v = v.slice(1);
+            }
+            while (v.endsWith(',') || v.endsWith(';') || v.endsWith(' ')) {
+                v = v.slice(0, -1);
+            }
+            return v;
+        });
+
+        let titleDesc = [];
+        for (let index = 0; index < arr.length; index+=2) {
+            if(arr[index + 1]) titleDesc.push({
+                titl: arr[index], 
+                desc: arr[index + 1],
+            });
+            else titleDesc.push({
+                titl: arr[index], 
+                desc: undefined,
+            });
+        }
+        arr = titleDesc;
+
+        const start = new RegExp(/с \d\d\.\d\d$/);
+        const end = new RegExp(/по \d\d\.\d\d$/);
+        const startEnd = new RegExp(/\d\d\.\d\d.\d\d\.\d\d$/);
+        const startEnd1 = new RegExp(/\d\d\.\d\d .\d\d\.\d\d$/);
+        const startEnd2 = new RegExp(/\d\d\.\d\d. \d\d\.\d\d$/);
+        const startEnd3 = new RegExp(/\d\d\.\d\d . \d\d\.\d\d$/);
+        const startEnd4 = new RegExp(/\d\d\.\d\d по \d\d\.\d\d$/);
+        arr = arr.map(v => {
+            const {titl} = v;
+    
+            let from, till;
+            if(startEnd.test(titl)) {
+                from = titl.slice(-11, -5);
+                till = titl.slice(-5);
+            } else if(startEnd1.test(titl) || startEnd2.test(titl)) {
+                from = titl.slice(-12, -6);
+                till = titl.slice(-5);
+            } else if(startEnd3.test(titl)) {
+                from = titl.slice(-13, -7);
+                till = titl.slice(-5);
+            } else if(startEnd4.test(titl)) {
+                from = titl.slice(-14, -8);
+                till = titl.slice(-5);
+            } else if(start.test(titl)) {
+                from = titl.slice(-5);
+            } else if(end.test(titl)) {
+                till = titl.slice(-5);
+            }
+
+            const year = (new Date).getFullYear();
+            from = !!from ? Date.parse(`${year}/${from.slice(-2)}/${from.slice(0, -3)}`) : undefined;
+            till = !!till ? Date.parse(`${year}/${till.slice(-2)}/${till.slice(0, -3)}`) : undefined;
+    
+            return { ...v, from, till };
+        });
+
+        return arr;
     });
 
     const process = async() => {

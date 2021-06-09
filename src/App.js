@@ -3,7 +3,7 @@ import './App.css';
 import { useEffect, useMemo, useState } from 'react';
 import ex from './ex.json';
 import { useCookies } from 'react-cookie';
-import { AppBar, Box, Button, ButtonGroup, Card, Container, createMuiTheme, CssBaseline, Grid, LinearProgress, Paper, Tab, Tabs, TextField, ThemeProvider, Typography, useTheme } from '@material-ui/core';
+import { AppBar, Box, Button, ButtonGroup, Card, Container, createMuiTheme, CssBaseline, FormControlLabel, Grid, LinearProgress, Paper, Switch, Tab, Tabs, TextField, ThemeProvider, Typography, useTheme } from '@material-ui/core';
 import SwipeableViews from 'react-swipeable-views';
 import * as colors from '@material-ui/core/colors';
 import { ReplayRounded } from '@material-ui/icons';
@@ -30,19 +30,21 @@ const AppContent = () => {
       return;
     }
     else await setUrl(true);
-    // // TEST \/
+    // TEST \/
     // await setData(ex);
     // await setLoaded(true);
     // return;
-    // // TEST /\
+    // TEST /\
     try {
       const res = await fetch('/schedule');
-      if(!res.ok) return;
-      const resData = await res.json();
-      await setData(resData);
+      if(res.ok) {
+        const resData = await res.json();
+        await setData(resData);
+      };
       setLoaded(true);
     } catch (e) {
       console.error(e);
+      setLoaded(true);
     }
   }
 
@@ -161,25 +163,39 @@ const NoUrl = ({}) => {
   )
 }
 
-const NotFetched = ({reload}) => (
-  <div
-    style={{padding: "120px 20px 0px 20px"}}
-  >
-    <Typography variant="h6" style={{marginBottom: 36, padding: "0 10px"}}>
-      Не удалось загрузить расписание
-    </Typography>
-    <div style={{float: "right", marginRight: 20}}>
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={reload}
-        startIcon={<ReplayRounded />}
-      >
-        Попробовать снова
-      </Button>
+const NotFetched = ({reload}) => {
+  const [cookies, setCookie, removeCookie] = useCookies();
+  return (
+    <div
+      style={{padding: "120px 20px 0px 20px"}}
+    >
+      <Typography variant="h6" style={{marginBottom: 36, padding: "0 10px"}}>
+        Не удалось загрузить расписание
+      </Typography>
+      <div style={{float: "right", marginRight: 20}}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={reload}
+          startIcon={<ReplayRounded />}
+        >
+          Попробовать снова
+        </Button>
+        <Typography variant="h6" style={{marginBottom: 10, marginTop: 10, padding: "0 10px", textAlign: "center"}}>
+          или
+        </Typography>
+        <Button
+          variant="contained"
+          color="primary"
+          style={{width: "100%"}}
+          onClick={() => removeCookie('url')}
+        >
+          Ввести ссылку снова
+        </Button>
+      </div>
     </div>
-  </div>
-)
+  )
+}
 
 const NotLoaded = () => (
   <div>
@@ -215,6 +231,7 @@ const Timetable = ({data}) => {
   };
 
   const theme = useTheme();
+  const [cookies, setCookie, removeCookie] = useCookies(['current']);
   const [value, setValue] = useState(0);
   const [day, setDay] = useState(0);
   const [ttl, setTtl] = useState();
@@ -229,9 +246,11 @@ const Timetable = ({data}) => {
     })
   }
   const currentDay = () => {
+    setChecked(!!cookies.current)
     let today = (new Date).getDay() - 1;
     if(today < 0) today = 0;
     setTtl(weekTtl(data.days[days[today][1]], data.week.type));
+    console.log(data.days[days[today][1]], data.week.type);
     setTitle(getTitle(today, data.week.type));
   }
   useEffect(currentDay, []);
@@ -257,9 +276,17 @@ const Timetable = ({data}) => {
     return `${days[d][0]}, ${w === 0 ? "числитель" : "знаменатель"}`
   }
 
+  const [checked, setChecked] = useState(false);
+  useEffect(() => {
+    checked ? setCookie('current', 'TATAKAE!', cookiesParams) : removeCookie('current')
+  }, [checked])
+
   return (
     <>
-      <AppBar position="static" style={{height: 48}}>
+      <AppBar
+        position="static"
+        style={{height: 48, maxWidth: 540, position: "fixed", top: 0}}
+      >
         <Tabs
           value={value}
           onChange={handleChange}
@@ -274,27 +301,111 @@ const Timetable = ({data}) => {
         index={value}
         onChangeIndex={handleChangeIndex}
       >
-        <TabPannel value={value} index={0} dir={theme.direction}>
-          <p>
+        <TabPannel value={value} index={0} dir={theme.direction} style={{minHeight: "100vh"}}>
+          <div style={{height: 48}} />
+          <Typography
+            style={{ marginTop: 10, marginBottom: 10, fontWeight: "bold" }}
+            align="center"
+            variant="h6"
+            color="primary"
+          >
             {title}
-          </p>
+          </Typography>
+          <Typography color="textSecondary"><hr style={{ color: "inherit" }} /></Typography>
           {ttl && ttl.map(val => {
-            if (!val[1]) return;
-            return (<p>
-              {val[0]}
-              <div dangerouslySetInnerHTML={{__html: val[1]}}></div>
-            </p>)
+            let now = Date.now();
+            const clss = val[1].map(c => {
+              const { titl, desc, till, from } = c;
+              if(titl.length === 0 || !!cookies.current && (till < now || from - 604800000 > now)) return undefined;
+
+              return (
+                <div style={{marginLeft: 14}}>
+                  <Typography>
+                    {titl}
+                  </Typography>
+                  {!!desc && (
+                    <Typography
+                      id="descTxt"
+                      variant="body2"
+                      color="textSecondary"
+                      style={{marginLeft: 14}}
+                      dangerouslySetInnerHTML={{ __html: desc }} 
+                    />
+                  )}
+                </div>
+              )
+            }).filter(c => !!c);
+
+            if (clss.length === 0) return;
+
+            return (
+              <div style={{marginRight: 10, marginLeft: 10}}>
+                <div style={{marginTop: 14, marginBottom: 14, marginRight: 4, marginLeft: 4}}>
+                  <Typography
+                    color="primary"
+                    style={{fontWeight: "bold", marginBottom: 14}}
+                  >
+                    {val[0]}
+                  </Typography>
+                  {clss.map((e, i) => i < clss.length - 1 ? [e, <div style={{height: 14}} />] : [e]).reduce((a, b) => a.concat(b))}
+                </div>
+                <Typography color="textSecondary"><hr style={{ color: "inherit" }} /></Typography>
+              </div>
+            );
           })}
+          <Typography
+            variant="body2"
+            color="textSecondary"
+            id="descTxt"
+            style={{marginLeft: 14, marginBottom: 8}}
+          >
+            <a href={cookies.url}>Открыть оригинал</a>
+          </Typography>
+          <div style={{height: 36}} />
+          <div style={{height: 36, width: "100vw", backgroundColor: "white", position: "fixed", bottom: 0}} />
         </TabPannel>
         <TabPannel value={value} index={1} dir={theme.direction}>
+          <div style={{height: 48}} />
           <Days
             day={day} setDay={setDay}
             week={data.week.type} setWeek={setWeek}
           />
+          <div style={{height: 36}} />
         </TabPannel>
       </SwipeableViews>
+      <Footer>
+        {value === 0 && (
+          <FormControlLabel
+            style={{marginRight: 10}}
+            value="start"
+            control={
+              <Switch
+                color="secondary"
+                checked={checked}
+                onClick={() => setChecked(!checked)}
+              />
+            }
+            label="Показать на сегодня (beta)"
+            labelPlacement="start"
+          />
+        )}
+        {value === 1 && (
+          <p></p>
+          )}
+      </Footer>
     </>
   );
+}
+
+const Footer = ({children}) => {
+  return(
+    <footer
+      class="MuiPaper-root MuiAppBar-root MuiAppBar-positionFixed MuiAppBar-colorPrimary mui-fixed MuiPaper-elevation4"
+      style={{height: 36, position: "fixed", top: "calc(100vh - 36px)"}}
+    >
+      {children}
+    </footer>
+  )
 }
 
 const days = [

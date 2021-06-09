@@ -40,3 +40,7 @@
 .ttl-page {
   height: calc(100vh - 48px);
 }
+
+#descTxt a  {
+  color: inherit;
+}
