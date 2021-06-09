@@ -7,6 +7,7 @@ import { AppBar, Box, Button, ButtonGroup, Card, Container, createMuiTheme, CssB
 import SwipeableViews from 'react-swipeable-views';
 import * as colors from '@material-ui/core/colors';
 import { ReplayRounded } from '@material-ui/icons';
+import PWAPrompt from 'react-ios-pwa-prompt';
 
 export const cookiesParams = {
   path: '/',
@@ -77,6 +78,13 @@ export default () => {
 
   return(
     <ThemeProvider theme={theme}>
+      <PWAPrompt
+        copyTitle="Добавьте на рабочий стол"
+        copyBody="Данная страница может функционировать как приложение. Добавьте ее на рабочий стол и используйте в полноэкранном режиме."
+        copyShareButtonLabel="1) Нажмите кнопку «Поделиться» в строке меню ниже."
+        copyAddHomeButtonLabel="2) Нажмите «Добавить на главный экран»."
+        copyClosePrompt="Закрыть"
+      />
       <CssBaseline />
       <Paper
         elevation={0}
