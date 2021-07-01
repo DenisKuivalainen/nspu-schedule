@@ -37,7 +37,7 @@ const AppContent = () => {
     // return;
     // TEST /\
     try {
-      const res = await fetch('/schedule');
+      const res = await fetch('/api/schedule');
       if(res.status === 200) {
         const resData = await res.json();
         await setData(resData);
