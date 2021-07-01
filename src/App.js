@@ -328,9 +328,11 @@ const Timetable = ({data}) => {
 
               return (
                 <div style={{marginLeft: 14}}>
-                  <Typography>
-                    {titl}
-                  </Typography>
+                  <Typography
+                    id="descTxt"
+                    color="textPrimary"
+                    dangerouslySetInnerHTML={{ __html: titl }}
+                  />
                   {!!desc && (
                     <Typography
                       id="descTxt"

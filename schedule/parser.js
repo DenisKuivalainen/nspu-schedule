@@ -1,5 +1,4 @@
 const fetch = require('node-fetch');
-const { getTTFB } = require('web-vitals');
 
 module.exports.getCode = (status) => {
     switch (status) {
@@ -103,8 +102,10 @@ module.exports.getSchedule = async(url) => {
         }
     }
 
+    const sliceStr = (str) => str.slice(str.indexOf('>') + 1);
+    const editLink = (str) => str.split(/href="/gm).join('href="api/').split(/href='/gm).join("href='api/");
+
     const parseDayTtl = (arr) => {
-        const sliceStr = (str) => str.slice(str.indexOf('>') + 1)
         let obj = {};
         let time = '';
         let ttl = [];
@@ -178,7 +179,7 @@ module.exports.getSchedule = async(url) => {
         for (let index = 0; index < arr.length; index+=2) {
             if(arr[index + 1]) titleDesc.push({
                 titl: arr[index], 
-                desc: arr[index + 1],
+                desc: editLink(arr[index + 1]),
             });
             else titleDesc.push({
                 titl: arr[index], 
