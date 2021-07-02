@@ -3,10 +3,10 @@ import './App.css';
 import { useEffect, useMemo, useState } from 'react';
 import ex from './ex.json';
 import { useCookies } from 'react-cookie';
-import { AppBar, Box, Button, ButtonGroup, Card, Container, createMuiTheme, CssBaseline, FormControlLabel, Grid, LinearProgress, Paper, Switch, Tab, Tabs, TextField, ThemeProvider, Typography, useTheme } from '@material-ui/core';
+import { AppBar, Box, Button, ButtonGroup, Card, Container, createMuiTheme, CssBaseline, FormControlLabel, Grid, IconButton, LinearProgress, Paper, Switch, Tab, Tabs, TextField, ThemeProvider, Toolbar, Typography, useTheme } from '@material-ui/core';
 import SwipeableViews from 'react-swipeable-views';
 import * as colors from '@material-ui/core/colors';
-import { ReplayRounded } from '@material-ui/icons';
+import { ArrowBackIosRounded, CloseRounded, ReplayRounded, SettingsRounded as SettingsIcon } from '@material-ui/icons';
 import PWAPrompt from 'react-ios-pwa-prompt';
 
 export const cookiesParams = {
@@ -52,6 +52,19 @@ const AppContent = () => {
   useEffect(checkAndFetch, []);
   useEffect(checkAndFetch, [cookies.url]);
 
+  const [width, setWidth] = useState(0);
+  useEffect(() => setWidth(window.innerWidth));
+
+  if(width > 540) return (
+    <div style={{marginLeft: 30, marginRight: 30, paddingTop: 50}}>
+      <Typography color="textPrimary">
+        Извините, разрешениие слишком велико, на данный момент приложение применимо только на мобильных устройствах.
+      </Typography>
+      <Typography style={{margin: 10}} color="textSecondary">
+        Если не сможете решить проблему самостоятельно, напишите письмо с подробным описанием проблемы на адрес <a href="servem3@yandex.com" style={{color: "inherit"}}>servem3@yandex.com</a>.
+      </Typography>
+    </div>
+  );
   if(!loaded) return <NotLoaded />;
   if(!url) return <NoUrl />;
   if(!data) return <NotFetched reload={checkAndFetch} />;
@@ -216,6 +229,7 @@ const TabPannel = (props) => {
   const { children, value, index, ...other } = props;
   return (
     <div
+    style={{left: 0, width: "100vw", overflow: "hidden"}}
       role="tabpanel"
       className="ttl-page"
       hidden={value !== index}
@@ -244,6 +258,8 @@ const Timetable = ({data}) => {
   const [day, setDay] = useState(0);
   const [ttl, setTtl] = useState();
   const [title, setTitle] = useState("");
+
+  const [settings, setSettings] = useState(false);
 
   const weekTtl = (obj, n) => {
     return Object.entries(obj).map(val => {
@@ -289,6 +305,7 @@ const Timetable = ({data}) => {
     checked ? setCookie('current', 'TATAKAE!', cookiesParams) : removeCookie('current')
   }, [checked])
 
+  if (settings) return <Settings close={() => setSettings(false)} />;
   return (
     <>
       <AppBar
@@ -400,7 +417,19 @@ const Timetable = ({data}) => {
           />
         )}
         {value === 1 && (
-          <p></p>
+          <p style={{marginTop: 0}} >
+            <IconButton
+              color="secondary"
+              style={{
+                height: 36,
+                marginBottom: 3,
+                marginLeft: "calc(100vw - 46px)",
+              }}
+              onClick={() => setSettings(true)}
+            >
+              <SettingsIcon />
+            </IconButton>
+          </p>
           )}
       </Footer>
     </>
@@ -476,4 +505,209 @@ const Days = ({day, setDay, week, setWeek}) => {
       })}
     </Grid>
   );
+}
+
+const Settings = (props) => {
+  const [option, setOption] = useState(0);
+  const [cookies, setCookie] = useCookies(['theme']);
+
+  return <div
+    style={{
+      height: "100vh",
+      width: "100vw",
+      overflow: "hidden",
+      position: "relative",
+      backgroundColor: !!cookies.theme ? '#1f1f1f' : '#f0f0f0',
+      zIndex: 100,
+      paddingTop: 54
+    }}
+  >
+    <AppBar style={{height: 48, width: "100vw", left: 0}}>
+      <Toolbar position="static" style={{height: 48, minHeight: 48, maxHeight: 48, width: "100vw", left: 0}}>
+        <IconButton onClick={() => {
+          if(option === 0) props.close();
+          else setOption(0);
+        }}>
+          {
+            option === 0 ? 
+            <CloseRounded color="secondary" /> :
+            <ArrowBackIosRounded color="secondary" />
+          }
+        </IconButton>
+      </Toolbar>
+    </AppBar>
+    <div>
+      <SettingsMenu option={option} setOption={setOption} />
+    </div>
+  </div>
+}
+
+const SettingsMenu = ({option, setOption}) => {
+  switch (option) {
+    case 1:
+      return null;
+    case 2:
+      return null;
+    case 3:
+      return null;
+    case 4:
+      return <Code />;
+    default:
+      return <SettingsButtons setOption={setOption} />;
+  }
+}
+
+const SettingsButton = ({text, ...props}) => (
+  <Grid 
+    item xs={12}
+    style={{marginLeft: "15%", marginRight: "15%"}}
+  >
+    <Button
+      style={{width: "100%"}}
+      color="primary"
+      variant={"contained"}
+      {...props}
+    >
+      {text}
+    </Button>
+  </Grid>
+)
+
+const SettingsButtons = ({setOption}) => {
+  return(
+    <Grid container spacing={3} style={{marginTop: "15vw"}}>
+      <SettingsButton onClick={() => setOption(1)} text="Расписание" />
+      <SettingsButton onClick={() => setOption(2)} text="Оформление" />
+      <SettingsButton onClick={() => setOption(3)} text="Поддержка" />
+      <SettingsButton onClick={() => setOption(4)} variant={"outlined"} text="....." />
+    </Grid>
+  )
+}
+
+const Code = () => {
+  const [code, setCode] = useState("");
+  const [msg, setMsg] = useState();
+  const [loading, setLoading] = useState(false);
+  const handleClick = async (s) => {
+    const newCode = `${code}${s}`;
+    await setCode(newCode);
+    if (newCode.length === 4) {
+      await getMsg(newCode);
+      return;
+    }
+  }
+
+  const getMsg = async (nc) => {
+    setLoading(true);
+    try{
+      const data = await fetch(`/api/code?code=${nc}`).then(res => res.json());
+      if(!data.status) {
+        abort();
+        return;
+      }
+      delete data.status;
+      setMsg(data);
+    } catch (e) {
+      abort();
+      console.log(e);
+    }
+  }
+  const abort = () => {
+    setCode("");
+    setLoading(false);
+  }
+
+  const R = ({children}) => (
+    <div
+      style={{
+        width: "60vw",
+        height: "20vw",
+        display: "table"
+      }}
+    >
+      {children}
+    </div>
+  )
+  const C = ({s}) => (
+    <div
+      style={{
+        width: "33%",
+        height: "100%",
+        padding: 5,
+        display: "table-cell"
+      }}
+    >
+      <Button
+        style={{
+          height: "100%",
+          width: "100%"
+        }}
+        onClick={() => handleClick(s)}
+        variant="contained"
+        color="secondary"
+        disabled={loading}
+      >{s}</Button>
+    </div>
+  )
+
+  const progress = loading ? {} : {variant: "determinate", value: code.length * 25}
+
+  if (!msg) return (
+    <div
+      style={{
+        padding: "20vw"
+      }}
+    >
+      <LinearProgress
+        color="secondary"
+        variant={!loading ? "determinate" : undefined}
+        value={!loading ? (code.length * 25) : undefined}
+        style={{
+          width: "100%",
+          marginBottom: "5vw"
+        }}
+      />
+      <R>
+        <C s="1" />
+        <C s="2" />
+        <C s="3" />
+      </R>
+      <R>
+        <C s="4" />
+        <C s="5" />
+        <C s="6" />
+      </R>
+      <R>
+        <C s="7" />
+        <C s="8" />
+        <C s="9" />
+      </R>
+      <R>
+        <div style={{width: "33%"}} />
+        <C s="0" />
+        <div style={{width: "33%"}} />
+      </R>
+    </div>
+  )
+  if(msg.img) return (
+    <div
+      style={{
+        padding: "20vw"
+      }}
+    >
+      <img style={{width: "100%"}} src={msg.img} alt="w3yfhwy3r8q3rncwr39" />
+    </div>
+  )
+  if(msg.text) return (
+    <div
+      style={{
+        padding: "3vw",
+        paddingTop: "15vw"
+      }}
+    >
+      {
+        msg.text.map(s => <Typography>{s}</Typography>)
+      }
+    </div>
+  )
 }
