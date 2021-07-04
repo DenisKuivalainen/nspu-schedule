@@ -21,6 +21,7 @@ const codes = {
     ]},
     "8013": {text: ["Who is mr. P? Is he a jelly banana?", "(@_@)"]},
     "6000": {text: ["Go go Power Rangers!!!1!"]},
-    "1984": {text: ["Большой брат следит за тобой"]},
+    "1984": {img: "/917kCB40HwaPwsqvI342Q.png"},
     "5401": {img: "/xicm67HeOs.jpeg"},
+    "3009": {text: ["Brother.", "Beggar.", "King."]},
 }
