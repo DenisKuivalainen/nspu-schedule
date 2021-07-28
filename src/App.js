@@ -3,10 +3,10 @@ import './App.css';
 import { useEffect, useMemo, useState } from 'react';
 import ex from './ex.json';
 import { useCookies } from 'react-cookie';
-import { AppBar, Box, Button, ButtonGroup, Card, Container, createMuiTheme, CssBaseline, FormControlLabel, Grid, IconButton, LinearProgress, Paper, Switch, Tab, Tabs, TextField, ThemeProvider, Toolbar, Typography, useTheme } from '@material-ui/core';
+import { AppBar, Button, ButtonGroup, createMuiTheme, CssBaseline, FormControlLabel, Grid, IconButton, LinearProgress, MenuItem, Paper, Select, Switch, Tab, Tabs, TextField, ThemeProvider, Toolbar, Typography, useTheme } from '@material-ui/core';
 import SwipeableViews from 'react-swipeable-views';
 import * as colors from '@material-ui/core/colors';
-import { ArrowBackIosRounded, CloseRounded, ReplayRounded, SettingsRounded as SettingsIcon } from '@material-ui/icons';
+import { ArrowBackIosRounded, CloseRounded, Looks3Rounded, Looks4Rounded, Looks5Rounded, Looks6Rounded, LooksOneRounded, LooksTwoRounded, NightsStayRounded, ReplayRounded, SettingsRounded as SettingsIcon, WbSunnyRounded } from '@material-ui/icons';
 import PWAPrompt from 'react-ios-pwa-prompt';
 
 export const cookiesParams = {
@@ -31,11 +31,11 @@ const AppContent = () => {
       return;
     }
     else await setUrl(true);
-    // TEST \/
-    // await setData(ex);
-    // await setLoaded(true);
-    // return;
-    // TEST /\
+    if(process.env.NODE_ENV !== "production") {
+      await setData(ex);
+      await setLoaded(true);
+      return;
+    }
     try {
       const res = await fetch('/api/schedule');
       if(res.status === 200) {
@@ -86,7 +86,7 @@ export default () => {
           },
         },
       }),
-    [cookies.theme],
+    [cookies]
   );  
 
   return(
@@ -274,7 +274,6 @@ const Timetable = ({data}) => {
     let today = (new Date).getDay() - 1;
     if(today < 0) today = 0;
     setTtl(weekTtl(data.days[days[today][1]], data.week.type));
-    console.log(data.days[days[today][1]], data.week.type);
     setTitle(getTitle(today, data.week.type));
   }
   useEffect(currentDay, []);
@@ -534,6 +533,7 @@ const Settings = (props) => {
             <ArrowBackIosRounded color="secondary" />
           }
         </IconButton>
+        <Typography>{getSettingsTitle(option)}</Typography>
       </Toolbar>
     </AppBar>
     <div>
@@ -542,14 +542,29 @@ const Settings = (props) => {
   </div>
 }
 
+const getSettingsTitle = (n) => {
+  switch (n) {
+    case 1:
+      return 'Расписание';
+    case 2:
+      return 'Оформление';
+    case 3:
+      return 'Поддержка';
+    case 4:
+      return '';
+    default:
+      return 'Настройки';
+  }
+}
+
 const SettingsMenu = ({option, setOption}) => {
   switch (option) {
     case 1:
-      return null;
+      return <NewTtl />;
     case 2:
-      return null;
+      return <ChangeTheme />;
     case 3:
-      return null;
+      return <AskMeHelp />;
     case 4:
       return <Code />;
     default:
@@ -606,10 +621,14 @@ const Code = () => {
         return;
       }
       delete data.status;
-      setMsg(data);
+      if(data.text || data.img) {
+        setMsg(data);
+        return;
+      }
+      abort();
     } catch (e) {
       abort();
-      console.log(e);
+      console.error(e);
     }
   }
   const abort = () => {
@@ -708,6 +727,177 @@ const Code = () => {
       {
         msg.text.map(s => <Typography>{s}</Typography>)
       }
+    </div>
+  )
+}
+
+const NewTtl = () => {
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(" ");
+  const [cookies, setCookie] = useCookies();
+  const [value, setValue] = useState(decodeURIComponent(cookies.url));
+
+  const recordInput = (e) => {
+    setValue(e.target.value);
+    setError(false);
+    setErrorMessage(" ");
+  }
+
+  const checkAndSet = () => {
+    const isUrl = new RegExp(/((([A-Za-z]{3,9}:(?:\/\/)?)(?:[-;:&=\+\$,\w]+@)?[A-Za-z0-9.-]+(:[0-9]+)?|(?:www.|[-;:&=\+\$,\w]+@)[A-Za-z0-9.-]+)((?:\/[\+~%\/.\w-_]*)?\??(?:[-\+=&;%@.\w_]*)#?(?:[\w]*))?)/);
+    const hasHttps = new RegExp(/https:\/\//);
+    const hasId = new RegExp(/.php\?id=/);
+    const isNspu = new RegExp(/schedule.nspu.ru/);
+    const isNumbers = new RegExp(/^[-+]?[0-9]+$/);
+
+    if(cookies.url === value) {
+      setError(true);
+      setErrorMessage("Введите НОВУЮ ссылку на расписание");
+      return;
+    }
+
+    if (!isUrl.test(value)) {
+      setError(true);
+      setErrorMessage("Введите ссылку на расписание");
+      return;
+    }
+    if (!isNspu.test(value)) {
+      setError(true);
+      setErrorMessage("Ссылка должна вести на домен schedule.nspu.ru");
+      return;
+    }
+    if (!hasHttps.test(value)) {
+      setError(true);
+      setErrorMessage("Ссылка должна начинаться с https://");
+      return;
+    }
+    if (!hasId.test(value) || !isNumbers.test(value.slice(value.lastIndexOf("=") + 1))) {
+      setError(true);
+      setErrorMessage("Ссылка должна заканчиваться на id вышего расписания");
+      return;
+    }
+    setCookie('url', value, cookiesParams);
+  }
+
+  return (
+    <div
+      style={{padding: "72px 20px 0px 20px"}}
+    >
+      <Typography variant="h6" style={{marginBottom: 36, padding: "0 10px"}}>
+        Введите новую ссылку на расписание
+      </Typography>
+      <div style={{marginBottom: 10, width: "100%"}}>
+        <TextField
+          id="outlined-basic"
+          label="Ссылка"
+          variant="outlined"
+          error={error}
+          helperText={errorMessage}
+          value={value}
+          onChange={recordInput}
+          style={{width: "100%"}}
+        />
+      </div>
+      <div style={{float: "right", marginRight: 20}}>
+        <Button
+          variant="contained"
+          color="secondary"
+          onClick={checkAndSet}
+        >
+          Ввести
+        </Button>
+      </div>
+    </div>
+  )
+}
+
+const ChangeTheme = () => {
+  const [cookies, setCookie, removeCookie] = useCookies();
+  const [primary, setPrimary] = useState(cookies.primary || "blue");
+  const [secondary, setSecondary] = useState(cookies.secondary || "pink");
+
+  const handlePrimary = async (e) => {
+    setPrimary(e.target.value);
+    await setCookie("primary", e.target.value, cookiesParams);
+    await fuckingUseEffect();
+  }
+  const handleSecondary = async (e) => {
+    setSecondary(e.target.value);
+    await setCookie("secondary", e.target.value, cookiesParams);
+    await fuckingUseEffect();
+  }
+
+  const fuckingUseEffect = async () => {
+    if(cookies.theme) {
+      await removeCookie("theme");
+      await setCookie("theme", "Here_should_be_cookie_value", cookiesParams);
+      return;
+    }
+    await setCookie("theme", "Here_should_be_cookie_value", cookiesParams);
+    await removeCookie("theme");
+  }
+
+  return (
+    <div
+      style={{padding: "72px 60px 0px 60px"}}
+    >
+      <Button
+        style={{
+          height: "100%",
+          width: "100%"
+        }}
+        variant="contained"
+        color="primary"
+        endIcon={!cookies.theme ? <NightsStayRounded /> : <WbSunnyRounded />}
+        onClick={() => cookies.theme ? removeCookie("theme") : setCookie("theme", "Here_should_be_cookie_value", cookiesParams)}
+      >
+        {!cookies.theme ? "тёмная" : "светлая"}
+      </Button>
+      <Select
+        style={{
+          marginTop: 40,
+          width: "45%"
+        }}
+        variant="outlined"
+        value={primary}
+        onChange={handlePrimary}
+      >
+        {Object.keys(colors).filter(key => key !== "common").map(key => <MenuItem value={key}>
+            <LooksOneRounded style={{color: colors[key][600]}} />
+            <LooksTwoRounded style={{color: colors[key][600]}} />
+            <Looks3Rounded style={{color: colors[key][600]}} />
+          </MenuItem>
+        )}
+      </Select>
+      <Select
+        style={{
+          marginTop: 40,
+          width: "45%",
+          marginLeft: "10%"
+        }}
+        variant="outlined"
+        value={secondary}
+        onChange={handleSecondary}
+      >
+        {Object.keys(colors).filter(key => key !== "common").map(key => <MenuItem value={key} style={{color: colors[key][600]}}>
+            <Looks4Rounded style={{color: colors[key][600]}} />
+            <Looks5Rounded style={{color: colors[key][600]}} />
+            <Looks6Rounded style={{color: colors[key][600]}} />
+          </MenuItem>
+        )}
+      </Select>
+    </div>
+  );
+}
+
+const AskMeHelp = () => {
+  return (
+    <div
+      style={{padding: "72px 40px 0px 40px"}}
+    >
+      <Typography variant="h6">
+       Если чо то не работает и вы не сможете решить проблему самостоятельно, напишите письмо с подробным описанием проблемы и скрином (!!!) на адрес <a href="servem3@yandex.com" style={{color: "inherit"}}>servem3@yandex.com</a>. Отвечу как только Яндекс пришлет уведомление (@_@).
+      </Typography>
     </div>
   )
 }
