@@ -416,7 +416,7 @@ const Timetable = ({data}) => {
           />
         )}
         {value === 1 && (
-          <p style={{marginTop: 0}} >
+          <p style={{marginTop: 0}} >           
             <IconButton
               color="secondary"
               style={{
@@ -502,6 +502,14 @@ const Days = ({day, setDay, week, setWeek}) => {
           </ Grid>
         )
       })}
+      <Grid 
+        item xs={12}
+        style={{marginLeft: "15%", marginRight: "15%"}}
+      >
+        <Typography color="textSecondary" variant="subtitle2" align="center">
+        {(new Date()).getFullYear()} © <a href="https://github.com/DenisKuivalainen" style={{color: "inherit", textDecoration: "none"}}>Kuivalainen</a>.
+        </Typography>
+      </Grid>
     </Grid>
   );
 }
@@ -595,6 +603,14 @@ const SettingsButtons = ({setOption}) => {
       <SettingsButton onClick={() => setOption(2)} text="Оформление" />
       <SettingsButton onClick={() => setOption(3)} text="Поддержка" />
       <SettingsButton onClick={() => setOption(4)} variant={"outlined"} text="....." />
+      {/* <Grid 
+        item xs={12}
+        style={{marginLeft: "15%", marginRight: "15%"}}
+      >
+        <Typography color="textSecondary" variant="subtitle2" align="center">
+          {(new Date()).getFullYear()} © <a href="https://github.com/DenisKuivalainen" style={{color: "inherit", textDecoration: "none"}}>Kuivalainen</a>.
+        </Typography>
+      </Grid> */}
     </Grid>
   )
 }
