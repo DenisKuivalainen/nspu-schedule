@@ -61,7 +61,7 @@ const AppContent = () => {
         Извините, разрешениие слишком велико, на данный момент приложение применимо только на мобильных устройствах.
       </Typography>
       <Typography style={{margin: 10}} color="textSecondary">
-        Если не сможете решить проблему самостоятельно, напишите письмо с подробным описанием проблемы на адрес <a href="support@nspu-schedule.ru" style={{color: "inherit"}}>support@nspu-schedule.ru</a>.
+        Если не сможете решить проблему самостоятельно, напишите письмо с подробным описанием проблемы на адрес <a href="mailto:support@nspu-schedule.ru" style={{color: "inherit"}}>support@nspu-schedule.ru</a>.
       </Typography>
     </div>
   );
@@ -912,7 +912,7 @@ const AskMeHelp = () => {
       style={{padding: "72px 40px 0px 40px"}}
     >
       <Typography variant="h6">
-       Если чо то не работает и вы не сможете решить проблему самостоятельно, напишите письмо с подробным описанием проблемы и скрином (!!!) на адрес <a href="support@nspu-schedule.ru" style={{color: "inherit"}}>support@nspu-schedule.ru</a>. Отвечу как только Яндекс пришлет уведомление (@_@).
+       Если чо то не работает и вы не сможете решить проблему самостоятельно, напишите письмо с подробным описанием проблемы и скрином (!!!) на адрес <a href="mailto:support@nspu-schedule.ru" style={{color: "inherit"}}>support@nspu-schedule.ru</a>. Отвечу как только Яндекс пришлет уведомление (@_@).
       </Typography>
     </div>
   )
