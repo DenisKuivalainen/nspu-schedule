@@ -61,7 +61,7 @@ const AppContent = () => {
         Извините, разрешениие слишком велико, на данный момент приложение применимо только на мобильных устройствах.
       </Typography>
       <Typography style={{margin: 10}} color="textSecondary">
-        Если не сможете решить проблему самостоятельно, напишите письмо с подробным описанием проблемы на адрес <a href="servem3@yandex.com" style={{color: "inherit"}}>servem3@yandex.com</a>.
+        Если не сможете решить проблему самостоятельно, напишите письмо с подробным описанием проблемы на адрес <a href="support@nspu-schedule.ru" style={{color: "inherit"}}>support@nspu-schedule.ru</a>.
       </Typography>
     </div>
   );
@@ -507,7 +507,7 @@ const Days = ({day, setDay, week, setWeek}) => {
         style={{marginLeft: "15%", marginRight: "15%"}}
       >
         <Typography color="textSecondary" variant="subtitle2" align="center">
-        {(new Date()).getFullYear()} © <a href="https://github.com/DenisKuivalainen" style={{color: "inherit", textDecoration: "none"}}>Kuivalainen</a>.
+        {(new Date()).getFullYear()} © kuivalainen.
         </Typography>
       </Grid>
     </Grid>
@@ -912,7 +912,7 @@ const AskMeHelp = () => {
       style={{padding: "72px 40px 0px 40px"}}
     >
       <Typography variant="h6">
-       Если чо то не работает и вы не сможете решить проблему самостоятельно, напишите письмо с подробным описанием проблемы и скрином (!!!) на адрес <a href="servem3@yandex.com" style={{color: "inherit"}}>servem3@yandex.com</a>. Отвечу как только Яндекс пришлет уведомление (@_@).
+       Если чо то не работает и вы не сможете решить проблему самостоятельно, напишите письмо с подробным описанием проблемы и скрином (!!!) на адрес <a href="support@nspu-schedule.ru" style={{color: "inherit"}}>support@nspu-schedule.ru</a>. Отвечу как только Яндекс пришлет уведомление (@_@).
       </Typography>
     </div>
   )
